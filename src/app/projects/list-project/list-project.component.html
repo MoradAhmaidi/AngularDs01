@@ -1,0 +1,59 @@
+<h5 class="card-title fw-semibold mb-4">Project List</h5>
+<div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+        <table class="table text-nowrap mb-0 align-middle">
+          <thead class="text-dark fs-4">
+            <tr>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Id</h6>
+              </th>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Libelle</h6>
+              </th>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Description</h6>
+              </th>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Nombre de joures</h6>
+              </th>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Date Debut</h6>
+              </th>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Date Fin</h6>
+              </th>
+              <th class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">Action</h6>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let projet of projets">
+              <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">{{projet.Id}}</h6>
+              </td>
+              <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">{{projet.Libelle}}</h6>
+              </td>
+              <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">{{projet.Description}}</h6>
+              </td>
+              <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">{{projet.SprintDays}}</h6>
+              </td>
+              <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">{{projet.DateDebut | date:"dd-MM-yyyy"}}</h6>
+              </td>
+              <td class="border-bottom-0">
+                <h6 class="fw-semibold mb-0">{{projet.DateFin | date:"dd-MM-yyyy"}}</h6>
+              </td>
+              <td class="border-bottom-0">
+                <a class="btn btn-warning mx-1" [routerLink]="'/projects/update/'+projet.Id" >M</a>
+                <button class="btn btn-danger mx-1" (click)="remove(projet.Id)">S</button>
+              </td>
+            </tr>                      
+          </tbody>
+        </table>
+  </div>
+</div>
